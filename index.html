@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Project 3</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:300i&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <h1 id="header">WELCOME</h1>
+    <h2>Choose a category of fun facts to learn from:</h1>
+    <button id="trivia-bt" v-on:click="setTypeTrivia()" type="button" class="btn btn-warning">Trivia</button>
+    <button id="math-bt" v-on:click="setTypeMath()" type="button" class="btn btn-danger">Math</button>
+    <button id="date-bt" v-on:click="setTypeDate()" type="button" class="btn btn-primary">Date</button>
+    <button id="year-bt" v-on:click="setTypeYear()" type="button" class="btn btn-success">Year</button>
+      
+    <div id="number-entry">
+        <h3>Enter a number or date(in month/day format) here:</h3>
+        <form v-on:keyup.prevent="fetchREST">
+          <input type="text" v-model="number">
+        </form>
+    </div>
+    
+    <div class="container">
+        <div id="number-display" class="jumbotron" style="border: 1px solid black; margin-top: 15px;">
+          <h1 class="display-4">Fun Fact</h1>
+          <p class="lead">Your fun fact will replace this text once a number or date is entered into the field above.</p>
+          <hr class="my-4">
+        </div>
+    </div>
+  </div>
+  
+  <footer>
+      <p>Github: <a href="https://github.com/SnorkelwackJr" target="_blank">Creative Project 3</a></p>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
